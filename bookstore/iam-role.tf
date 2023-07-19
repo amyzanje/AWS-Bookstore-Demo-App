@@ -75,7 +75,7 @@ resource "aws_iam_role" "mybookstore-BookstoreCogn-cognitoDefaultUserLambda" {
 resource "aws_iam_role" "mybookstore-CognitoAuthorizedRole" {
   path                 = "/"
   name                 = "mybookstore-CognitoAuthorizedRole"
-  assume_role_policy   = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Federated\":\"cognito-identity.amazonaws.com\"},\"Action\":\"sts:AssumeRoleWithWebIdentity\",\"Condition\":{\"StringEquals\":{\"cognito-identity.amazonaws.com:aud\":\"us-east-1:dd040813-bcdb-45d7-b8e3-87b61f570c29\"},\"ForAnyValue:StringLike\":{\"cognito-identity.amazonaws.com:amr\":\"authenticated\"}}}]}"
+  assume_role_policy   = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Federated\":\"cognito-identity.amazonaws.com\"},\"Action\":\"sts:AssumeRoleWithWebIdentity\",\"Condition\":{\"StringEquals\":{\"cognito-identity.amazonaws.com:aud\":\"${aws_cognito_identity_pool.CognitoIdentityPool.id}\"},\"ForAnyValue:StringLike\":{\"cognito-identity.amazonaws.com:amr\":\"authenticated\"}}}]}"
   max_session_duration = 3600
   tags                 = {}
 }

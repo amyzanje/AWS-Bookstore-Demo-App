@@ -104,7 +104,7 @@ resource "aws_iam_role_policy" "IAMPolicy21" {
 }
 
 resource "aws_iam_role_policy" "IAMPolicy22" {
-  policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":[\"mobileanalytics:PutEvents\",\"cognito-sync:*\",\"cognito-identity:*\"],\"Resource\":\"*\",\"Effect\":\"Allow\"},{\"Action\":[\"execute-api:Invoke\"],\"Resource\":\"arn:aws:execute-api:us-east-1:${var.account_id}:r9wd1ob1ve/*\",\"Effect\":\"Allow\"}]}"
+  policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":[\"mobileanalytics:PutEvents\",\"cognito-sync:*\",\"cognito-identity:*\"],\"Resource\":\"*\",\"Effect\":\"Allow\"},{\"Action\":[\"execute-api:Invoke\"],\"Resource\":\"arn:aws:execute-api:us-east-1:${var.account_id}:${aws_api_gateway_rest_api.AppApi.id}/*\",\"Effect\":\"Allow\"}]}"
   role   = aws_iam_role.mybookstore-CognitoAuthorizedRole.name
 }
 
