@@ -94,7 +94,7 @@ resource "aws_lambda_permission" "LambdaPermission_ListOrders" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.FunctionListOrders.arn
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "arn:aws:execute-api:us-east-1:${var.account_id}:orzxudvdpa/*"
+  source_arn    = "${aws_api_gateway_rest_api.AppApi.execution_arn}/*"
 }
 
 
@@ -136,7 +136,7 @@ resource "aws_lambda_permission" "LambdaPermission_GetBook" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.FunctionGetBook.arn
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.AppApi.arn}/*"
+  source_arn    = "${aws_api_gateway_rest_api.AppApi.execution_arn}/*"
 }
 
 
@@ -177,7 +177,7 @@ resource "aws_lambda_permission" "LambdaPermission_ListBooks" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.FunctionListBooks.arn
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.AppApi.arn}/*"
+  source_arn    = "${aws_api_gateway_rest_api.AppApi.execution_arn}/*"
 }
 
 
@@ -218,8 +218,9 @@ resource "aws_lambda_permission" "LambdaPermission_UpdateCart" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.FunctionUpdateCart.arn
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.AppApi.arn}/*"
+  source_arn    = "${aws_api_gateway_rest_api.AppApi.execution_arn}/*"
 }
+
 
 
 
@@ -258,7 +259,7 @@ resource "aws_lambda_permission" "LambdaPermission_GetCartItem" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.FunctionGetCartItem.arn
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.AppApi.arn}/*"
+  source_arn    = "${aws_api_gateway_rest_api.AppApi.execution_arn}/*"
 }
 
 
@@ -299,7 +300,7 @@ resource "aws_lambda_permission" "LambdaPermission_ListOrdersInCart" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.FunctionListItemsInCart.arn
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.AppApi.arn}/*"
+  source_arn    = "${aws_api_gateway_rest_api.AppApi.execution_arn}/*"
 }
 
 
@@ -340,7 +341,7 @@ resource "aws_lambda_permission" "LambdaPermission_AddToCart" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.FunctionAddToCart.arn
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.AppApi.arn}/*"
+  source_arn    = "${aws_api_gateway_rest_api.AppApi.execution_arn}/*"
 }
 
 
@@ -380,7 +381,7 @@ resource "aws_lambda_permission" "LambdaPermission_RemoveFromCart" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.FunctionRemoveFromCart.arn
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.AppApi.arn}/*"
+  source_arn    = "${aws_api_gateway_rest_api.AppApi.execution_arn}/*"
 }
 
 
@@ -421,7 +422,7 @@ resource "aws_lambda_permission" "LambdaPermission_Checkout" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.FunctionCheckout.arn
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.AppApi.arn}/*"
+  source_arn    = "${aws_api_gateway_rest_api.AppApi.execution_arn}/*"
 }
 
 
@@ -504,7 +505,7 @@ resource "aws_lambda_permission" "LambdaPermission_GetRecommendations" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.FunctionGetRecommendations.arn
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.AppApi.arn}/*"
+  source_arn    = "${aws_api_gateway_rest_api.AppApi.execution_arn}/*"
 }
 
 
@@ -555,7 +556,7 @@ resource "aws_lambda_permission" "LambdaPermission_GetRecommendationsByBook" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.FunctionGetRecommendationsByBook.arn
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.AppApi.arn}/*"
+  source_arn    = "${aws_api_gateway_rest_api.AppApi.execution_arn}/*"
 }
 
 
@@ -607,7 +608,7 @@ resource "aws_lambda_permission" "LambdaPermission_Search" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.FunctionSearch.arn
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.AppApi.arn}/*"
+  source_arn    = "${aws_api_gateway_rest_api.AppApi.execution_arn}/*"
 }
 
 
@@ -672,7 +673,7 @@ resource "aws_lambda_permission" "LambdaPermission_GetBestSellers" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.FunctionGetBestSellers.arn
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.AppApi.arn}/*"
+  source_arn    = "${aws_api_gateway_rest_api.AppApi.execution_arn}/*"
 }
 
 
