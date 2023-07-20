@@ -6,7 +6,7 @@ resource "aws_cloudfront_distribution" "CloudFrontDistribution" {
 
     origin_path = ""
     s3_origin_config {
-      origin_access_identity = aws_cloudfront_origin_access_identity.CloudFrontCloudFrontOriginAccessIdentity.cloudfront_access_identity_path
+       origin_access_identity = aws_cloudfront_origin_access_identity.CloudFrontCloudFrontOriginAccessIdentity.cloudfront_access_identity_path
     }
   }
   default_cache_behavior {
@@ -30,6 +30,7 @@ resource "aws_cloudfront_distribution" "CloudFrontDistribution" {
     viewer_protocol_policy = "https-only"
   }
   comment     = "CDN for mybookstore-assetsbucket-ptrp4fcz0svs"
+  default_root_object = "index.html"
   price_class = "PriceClass_All"
   enabled     = true
   viewer_certificate {

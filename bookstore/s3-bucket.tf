@@ -1,11 +1,11 @@
 resource "aws_s3_bucket" "S3Bucket" {
-  bucket = var.AssetsBucket
+  bucket        = var.AssetsBucket
   force_destroy = true
 }
 
 resource "aws_s3_bucket" "S3Bucket2" {
   force_destroy = true
-  bucket = var.pipelinebucket
+  bucket        = var.pipelinebucket
 }
 
 resource "aws_s3_bucket_policy" "S3BucketPolicy" {
@@ -27,5 +27,24 @@ resource "aws_s3_bucket_policy" "S3BucketPolicy" {
     ]
 }
 EOF
+}
+
+
+
+resource "aws_s3_bucket_public_access_block" "asset_bucket_all_access" {
+  bucket = aws_s3_bucket.S3Bucket.id
+
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+}
+
+resource "aws_s3_bucket_website_configuration" "asset_bucket_Website_host" {
+  bucket = aws_s3_bucket.S3Bucket.id
+
+  index_document {
+    suffix = "index.html"
+  }
 }
 

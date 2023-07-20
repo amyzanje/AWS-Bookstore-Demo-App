@@ -1,3 +1,4 @@
+
 resource "aws_elasticsearch_domain" "OpenSearchServiceDomain" {
   domain_name           = var.mybookstore-domain
   elasticsearch_version = "OpenSearch_1.3"

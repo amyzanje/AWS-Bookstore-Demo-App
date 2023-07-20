@@ -84,7 +84,7 @@ resource "aws_api_gateway_method" "RecomendationsApiRequestOPTIONS" {
   #     response_parameters = {
   #       "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
   #       "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-  #       "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+  #       "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   #     }
 
   #     response_templates = {
@@ -138,7 +138,7 @@ resource "aws_api_gateway_integration_response" "RecomendationsApiRequestOPTIONS
   response_parameters = {
     "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
     "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-    "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+    "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   }
 
   response_templates = {
@@ -256,7 +256,7 @@ resource "aws_api_gateway_method" "RecomendationsByBookApiRequestOPTIONS" {
   #     response_parameters = {
   #       "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
   #       "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-  #       "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+  #       "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   #     }
 
   #     response_templates = {
@@ -311,7 +311,7 @@ resource "aws_api_gateway_integration_response" "RecomendationsByBookApiRequestO
   response_parameters = {
     "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
     "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-    "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+    "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   }
 
   response_templates = {
@@ -439,7 +439,7 @@ resource "aws_api_gateway_method" "BooksApiRequestOPTIONS" {
   #     response_parameters = {
   #       "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
   #       "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-  #       "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+  #       "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   #     }
 
   #     response_templates = {
@@ -492,7 +492,7 @@ resource "aws_api_gateway_integration_response" "BooksApiRequestOPTIONS" {
   response_parameters = {
     "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
     "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-    "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+    "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   }
 
   response_templates = {
@@ -607,7 +607,7 @@ resource "aws_api_gateway_method" "BookItemApiRequestOPTIONS" {
   #     response_parameters = {
   #       "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
   #       "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-  #       "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+  #       "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   #     }
 
   #     response_templates = {
@@ -660,7 +660,7 @@ resource "aws_api_gateway_integration_response" "BookItemApiRequestOPTIONS" {
   response_parameters = {
     "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
     "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-    "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+    "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   }
 
   response_templates = {
@@ -834,7 +834,7 @@ resource "aws_api_gateway_method" "OrdersApiRequestOPTIONS" {
   #       response_parameters = {
   #         "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
   #         "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-  #         "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+  #         "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   #       }
 
   #       response_templates = {
@@ -887,7 +887,7 @@ resource "aws_api_gateway_integration_response" "OrdersApiRequestOPTIONS" {
   response_parameters = {
     "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
     "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-    "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+    "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   }
 
   response_templates = {
@@ -1168,7 +1168,7 @@ resource "aws_api_gateway_method" "CartApiRequestOPTIONS" {
   #     response_parameters = {
   #       "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
   #       "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-  #       "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+  #       "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   #     }
 
   #     response_templates = {
@@ -1220,7 +1220,7 @@ resource "aws_api_gateway_integration_response" "CartApiRequestOPTIONS" {
   response_parameters = {
     "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
     "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-    "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+    "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   }
 
   response_templates = {
@@ -1329,7 +1329,7 @@ resource "aws_api_gateway_method" "CartItemApiRequestOPTIONS" {
   #     response_parameters = {
   #       "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
   #       "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-  #       "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+  #       "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   #     }
 
   #     response_templates = {
@@ -1382,7 +1382,7 @@ resource "aws_api_gateway_integration_response" "CartItemApiRequestOPTIONS" {
   response_parameters = {
     "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
     "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-    "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+    "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   }
 
   response_templates = {
@@ -1501,7 +1501,7 @@ resource "aws_api_gateway_method" "SearchApiRequestOPTIONS" {
   #     response_parameters = {
   #       "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
   #       "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-  #       "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+  #       "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   #     }
 
   #     response_templates = {
@@ -1555,7 +1555,7 @@ resource "aws_api_gateway_integration_response" "SearchApiRequestOPTIONS" {
   response_parameters = {
     "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
     "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-    "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+    "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   }
 
   response_templates = {
@@ -1658,7 +1658,7 @@ resource "aws_api_gateway_method" "BestsellersApiRequestOPTIONS" {
   #     response_parameters = {
   #       "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
   #       "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-  #       "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+  #       "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   #     }
 
   #     response_templates = {
@@ -1712,7 +1712,7 @@ resource "aws_api_gateway_integration_response" "BestsellersApiRequestOPTIONS" {
   response_parameters = {
     "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
     "method.response.header.Access-Control-Allow-Methods" = "'''GET,POST,PUT,DELETE,OPTIONS,HEAD,PATCH'''"
-    "method.response.header.Access-Control-Allow-Origin"  = "'''*'''"
+    "method.response.header.Access-Control-Allow-Origin"  = "'''https://${aws_cloudfront_distribution.CloudFrontDistribution.domain_name}'''"
   }
 
   response_templates = {

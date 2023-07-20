@@ -434,7 +434,7 @@ resource "aws_lambda_function" "FunctionUploadBooks" {
     variables = {
       S3_BUCKET  = "aws-bookstore-demo-app-us-east-1"
       TABLE_NAME = "mybookstore-Books"
-      FILE_NAME  = "lambda-function-code-repo/data/books.json"
+      FILE_NAME  = "data/books.json"
     }
   }
   function_name = "mybookstore-UploadBooks"
@@ -618,7 +618,7 @@ resource "aws_lambda_layer_version" "PythonLambdaLayer" {
   compatible_runtimes = ["python3.9", "python3.7", "python3.6"]
   layer_name          = "PythonLambdaLayer"
   source_code_hash    = "lambda-function-code-repo/PythonLambdaLayer.zip"
-  filename         = "lambda-function-code-repo/PythonLambdaLayer.zip"
+  filename            = "lambda-function-code-repo/PythonLambdaLayer.zip"
 }
 
 
@@ -745,7 +745,7 @@ resource "aws_lambda_function" "bookstoreNeptuneLoaderLambda" {
       neptunedb         = aws_neptune_cluster.NeptuneDBCluster.endpoint
       s3loadiamrole     = aws_iam_role.mybookstore-bookstoreNeptuneLoaderS3ReadRole.arn
       region            = var.region
-      neptuneloads3path = "lambda-function-code-repo/data/"
+      neptuneloads3path = "s3://bookstore-neptune/data/"
     }
   }
   function_name = "mybookstore-bookstoreNeptuneLoaderLambda"
@@ -858,9 +858,9 @@ resource "aws_lambda_event_source_mapping" "DataTableStream2" {
 
 
 resource "aws_lambda_function" "UpdateConfigFunction" {
-  description   = "Update config for CodeCommit repository"
+  description = "Update config for CodeCommit repository"
 
-   depends_on = [
+  depends_on = [
     aws_codecommit_repository.CodeCommitRepository,
     #aws_lambda_function.SeederFunction,
     #aws_cloudformation_custom_resource.RepositorySeeder,
@@ -871,13 +871,13 @@ resource "aws_lambda_function" "UpdateConfigFunction" {
   ]
 
   function_name = "UpdateConfigFunction"
-  
-  handler       = "index.handler"
-  role          = aws_iam_role.mybookstore-SeederRole.arn
-  runtime       = "nodejs16.x"
-  timeout       = 300
 
- source_code_hash = "lambda-function-code-repo/UpdateConfig.zip"
+  handler = "index.handler"
+  role    = aws_iam_role.mybookstore-SeederRole.arn
+  runtime = "nodejs16.x"
+  timeout = 300
+
+  source_code_hash = "lambda-function-code-repo/UpdateConfig.zip"
   filename         = "lambda-function-code-repo/UpdateConfig.zip"
   #"https://${aws_api_gateway_rest_api.AppApi.id}.execute-api.${var.aws_region}.amazonaws.com/prod"
   environment {
@@ -898,7 +898,7 @@ resource "aws_lambda_function" "UpdateConfigFunction" {
 ########################### CreateOSRoleFunction #########################################
 
 resource "aws_lambda_function" "CreateOSRoleFunction" {
-  
+
   function_name = "CreateOSRoleFunction"
   description   = "Create OpenSearch role"
   handler       = "index.handler"
@@ -906,7 +906,7 @@ resource "aws_lambda_function" "CreateOSRoleFunction" {
   runtime       = "nodejs16.x"
   timeout       = 300
 
- source_code_hash = "lambda-function-code-repo/CreateOSRole.zip"
+  source_code_hash = "lambda-function-code-repo/CreateOSRole.zip"
   filename         = "lambda-function-code-repo/CreateOSRole.zip"
 
 }
