@@ -31,6 +31,12 @@ resource "aws_cognito_identity_pool_roles_attachment" "CognitoIdentityPoolRoleAt
 
 resource "aws_cognito_user_pool" "CognitoUserPool" {
   name = "bookstore"
+  account_recovery_setting {
+    recovery_mechanism {
+      priority = 1
+      name     = "verified_email"
+    }
+  }
   password_policy {
     minimum_length    = 8
     require_lowercase = false
@@ -274,6 +280,8 @@ resource "aws_cognito_user_pool" "CognitoUserPool" {
     #unused_account_validity_days = 7-----> deprecated argument
   }
   tags = {}
+
+
 }
 
 

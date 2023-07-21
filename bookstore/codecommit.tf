@@ -4,7 +4,8 @@ resource "aws_codecommit_repository" "CodeCommitRepository" {
 }
 
 variable "mybookstore-WebAssets" {
-  type = string
+  type    = string
   default = "mybookstore-WebAssets"
-  
+
 }
+

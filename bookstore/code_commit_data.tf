@@ -5,12 +5,20 @@ resource "null_resource" "Clone_Repo" {
       git clone ${aws_codecommit_repository.CodeCommitRepository.clone_url_http} 
     EOT
   }
+  depends_on = [
+    aws_codecommit_repository.CodeCommitRepository,
+    aws_codebuild_project.CodeBuildProject,
+    aws_codepipeline.CodePipelinePipeline,
+    aws_s3_bucket.S3Bucket,
+    aws_cloudfront_distribution.CloudFrontDistribution
+
+  ]
 }
 
 resource "null_resource" "Copy_data_to_local_repo" {
   provisioner "local-exec" {
     command = <<-EOT
-    xcopy .\code_commit_data\* .\newrepo /Y /E /I 
+    xcopy .\code_commit_data\* .\${var.mybookstore-WebAssets} /Y /E /I 
     EOT
 
   }
