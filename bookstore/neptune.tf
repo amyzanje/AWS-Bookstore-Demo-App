@@ -21,7 +21,8 @@ resource "aws_neptune_subnet_group" "NeptuneDBSubnetGroup" {
   name        = "bookstoreneptunesubnetgroup-keba9bryidxa"
   description = "Subnet group for Neptune DB within book store app."
   subnet_ids = [
-    aws_subnet.EC2Subnet1.id
+    aws_subnet.EC2Subnet1.id,
+    aws_subnet.EC2Subnet2.id
   ]
 }
 
@@ -29,8 +30,16 @@ resource "aws_neptune_subnet_group" "NeptuneDBSubnetGroup" {
 
 resource "aws_neptune_cluster" "NeptuneDBCluster" {
   availability_zones = [
-    "us-east-1b"
+    "us-east-1b",
+    "us-east-1a"
   ]
+
+  lifecycle {
+    ignore_changes = [
+      availability_zones # Ignore the change in AZ
+    ]
+  }
+
   backup_retention_period              = 1
   cluster_identifier                   = "neptunedbcluster-x4kv4dotqbs7"
   neptune_cluster_parameter_group_name = "default.neptune1.2"

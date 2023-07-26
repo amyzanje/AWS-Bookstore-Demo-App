@@ -1,7 +1,16 @@
 
 resource "aws_cloudfront_distribution" "CloudFrontDistribution" {
+
+  lifecycle {
+    ignore_changes = [
+      viewer_certificate,
+    ]
+  }
+  depends_on = [
+    aws_s3_bucket_website_configuration.asset_bucket_Website_host
+  ]
   origin {
-    domain_name = "mybookstore-assetsbucket-ptrp4fcz0svs.s3.amazonaws.com"
+    domain_name = "${aws_s3_bucket.S3Bucket.bucket}.s3.${var.region}.amazonaws.com"
     origin_id   = "S3"
 
     origin_path = ""

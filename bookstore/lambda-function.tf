@@ -38,8 +38,8 @@ resource "aws_lambda_function" "UpdateSearchCluster" {
     aws_dynamodb_table.DynamoDBTable
   ]
 
-  source_code_hash = "lambda-function-code-repo/UpdateSearchCluster.zip"
-  filename         = "lambda-function-code-repo/UpdateSearchCluster.zip"
+  # source_code_hash = "lambda-function-code-repo/UpdateSearchCluster.zip"
+  filename = "lambda-function-code-repo/UpdateSearchCluster.zip"
   #source_code_size = filemd5("UpdateSearchCluster.zip") * 1024
 
   tags = {
@@ -73,8 +73,8 @@ resource "aws_lambda_function" "FunctionListOrders" {
     "x86_64"
   ]
 
-  source_code_hash = "lambda-function-code-repo/ListOrders.zip"
-  filename         = "lambda-function-code-repo/ListOrders.zip"
+  # source_code_hash = "lambda-function-code-repo/ListOrders.zip"
+  filename = "lambda-function-code-repo/ListOrders.zip"
 
   memory_size = 256
   role        = "arn:aws:iam::${var.account_id}:role/mybookstore-DynamoDbLambda"
@@ -117,8 +117,8 @@ resource "aws_lambda_function" "FunctionGetBook" {
   memory_size = 256
   role        = "arn:aws:iam::${var.account_id}:role/mybookstore-DynamoDbLambda"
 
-  source_code_hash = "lambda-function-code-repo/GetBook.zip"
-  filename         = "lambda-function-code-repo/GetBook.zip"
+  # source_code_hash = "lambda-function-code-repo/GetBook.zip"
+  filename = "lambda-function-code-repo/GetBook.zip"
 
   runtime = "nodejs16.x"
   timeout = 120
@@ -156,8 +156,8 @@ resource "aws_lambda_function" "FunctionListBooks" {
     "x86_64"
   ]
 
-  source_code_hash = "lambda-function-code-repo/ListBooks.zip"
-  filename         = "lambda-function-code-repo/ListBooks.zip"
+  # source_code_hash = "lambda-function-code-repo/ListBooks.zip"
+  filename = "lambda-function-code-repo/ListBooks.zip"
 
   memory_size = 256
   role        = "arn:aws:iam::${var.account_id}:role/mybookstore-DynamoDbLambda"
@@ -197,8 +197,8 @@ resource "aws_lambda_function" "FunctionUpdateCart" {
     "x86_64"
   ]
 
-  source_code_hash = "lambda-function-code-repo/UpdateCart.zip"
-  filename         = "lambda-function-code-repo/UpdateCart.zip"
+  # source_code_hash = "lambda-function-code-repo/UpdateCart.zip"
+  filename = "lambda-function-code-repo/UpdateCart.zip"
 
   memory_size = 256
   role        = "arn:aws:iam::${var.account_id}:role/mybookstore-DynamoDbLambda"
@@ -239,8 +239,8 @@ resource "aws_lambda_function" "FunctionGetCartItem" {
     "x86_64"
   ]
 
-  source_code_hash = "lambda-function-code-repo/GetCartItem.zip"
-  filename         = "lambda-function-code-repo/GetCartItem.zip"
+  # source_code_hash = "lambda-function-code-repo/GetCartItem.zip"
+  filename = "lambda-function-code-repo/GetCartItem.zip"
 
   memory_size = 256
   role        = "arn:aws:iam::${var.account_id}:role/mybookstore-DynamoDbLambda"
@@ -279,8 +279,8 @@ resource "aws_lambda_function" "FunctionListItemsInCart" {
     "x86_64"
   ]
 
-  source_code_hash = "lambda-function-code-repo/ListItemsInCart.zip"
-  filename         = "lambda-function-code-repo/ListItemsInCart.zip"
+  # source_code_hash = "lambda-function-code-repo/ListItemsInCart.zip"
+  filename = "lambda-function-code-repo/ListItemsInCart.zip"
 
 
   memory_size = 256
@@ -320,8 +320,8 @@ resource "aws_lambda_function" "FunctionAddToCart" {
     "x86_64"
   ]
 
-  source_code_hash = "lambda-function-code-repo/AddToCart.zip"
-  filename         = "lambda-function-code-repo/AddToCart.zip"
+  # source_code_hash = "lambda-function-code-repo/AddToCart.zip"
+  filename = "lambda-function-code-repo/AddToCart.zip"
 
 
   memory_size = 256
@@ -362,12 +362,12 @@ resource "aws_lambda_function" "FunctionRemoveFromCart" {
     "x86_64"
   ]
 
-  source_code_hash = "lambda-function-code-repo/RemoveFromCart.zip"
-  filename         = "lambda-function-code-repo/RemoveFromCart.zip"
-  memory_size      = 256
-  role             = "arn:aws:iam::${var.account_id}:role/mybookstore-DynamoDbLambda"
-  runtime          = "nodejs16.x"
-  timeout          = 120
+  # source_code_hash = "lambda-function-code-repo/RemoveFromCart.zip"
+  filename    = "lambda-function-code-repo/RemoveFromCart.zip"
+  memory_size = 256
+  role        = "arn:aws:iam::${var.account_id}:role/mybookstore-DynamoDbLambda"
+  runtime     = "nodejs16.x"
+  timeout     = 120
   tracing_config {
     mode = "PassThrough"
   }
@@ -402,8 +402,8 @@ resource "aws_lambda_function" "FunctionCheckout" {
     "x86_64"
   ]
 
-  source_code_hash = "lambda-function-code-repo/Checkout.zip"
-  filename         = "lambda-function-code-repo/Checkout.zip"
+  # source_code_hash = "lambda-function-code-repo/Checkout.zip"
+  filename = "lambda-function-code-repo/Checkout.zip"
 
   memory_size = 256
   role        = "arn:aws:iam::${var.account_id}:role/mybookstore-DynamoDbLambda"
@@ -443,8 +443,8 @@ resource "aws_lambda_function" "FunctionUploadBooks" {
     "x86_64"
   ]
 
-  source_code_hash = "lambda-function-code-repo/UploadBooks.zip"
-  filename         = "lambda-function-code-repo/UploadBooks.zip"
+  # source_code_hash = "lambda-function-code-repo/UploadBooks.zip"
+  filename = "lambda-function-code-repo/UploadBooks.zip"
 
 
   memory_size = 128
@@ -475,8 +475,8 @@ resource "aws_lambda_function" "FunctionGetRecommendations" {
     "x86_64"
   ]
 
-  source_code_hash = "lambda-function-code-repo/GetRecommendations.zip"
-  filename         = "lambda-function-code-repo/GetRecommendations.zip"
+  # source_code_hash = "lambda-function-code-repo/GetRecommendations.zip"
+  filename = "lambda-function-code-repo/GetRecommendations.zip"
 
 
   memory_size = 256
@@ -525,8 +525,8 @@ resource "aws_lambda_function" "FunctionGetRecommendationsByBook" {
     "x86_64"
   ]
 
-  source_code_hash = "lambda-function-code-repo/GetRecommendationsByBook.zip"
-  filename         = "lambda-function-code-repo/GetRecommendationsByBook.zip"
+  # source_code_hash = "lambda-function-code-repo/GetRecommendationsByBook.zip"
+  filename = "lambda-function-code-repo/GetRecommendationsByBook.zip"
 
 
   memory_size = 256
@@ -577,8 +577,8 @@ resource "aws_lambda_function" "FunctionSearch" {
     "x86_64"
   ]
 
-  source_code_hash = "lambda-function-code-repo/Search.zip"
-  filename         = "lambda-function-code-repo/Search.zip"
+  # source_code_hash = "lambda-function-code-repo/Search.zip"
+  filename = "lambda-function-code-repo/Search.zip"
 
   memory_size = 256
   role        = "arn:aws:iam::${var.account_id}:role/mybookstore-OSSearchRole"
@@ -617,8 +617,9 @@ resource "aws_lambda_permission" "LambdaPermission_Search" {
 resource "aws_lambda_layer_version" "PythonLambdaLayer" {
   compatible_runtimes = ["python3.9", "python3.7", "python3.6"]
   layer_name          = "PythonLambdaLayer"
-  source_code_hash    = "lambda-function-code-repo/PythonLambdaLayer.zip"
-  filename            = "lambda-function-code-repo/PythonLambdaLayer.zip"
+  # source_code_hash    = "lambda-function-code-repo/PythonLambdaLayer.zip"
+  filename = "lambda-function-code-repo/PythonLambdaLayer.zip"
+
 }
 
 
@@ -639,8 +640,8 @@ resource "aws_lambda_function" "FunctionGetBestSellers" {
     "x86_64"
   ]
 
-  source_code_hash = "lambda-function-code-repo/GetBestSellers.zip"
-  filename         = "lambda-function-code-repo/GetBestSellers.zip"
+  # source_code_hash = "lambda-function-code-repo/GetBestSellers.zip"
+  filename = "lambda-function-code-repo/GetBestSellers.zip"
 
   memory_size = 256
   role        = "arn:aws:iam::${var.account_id}:role/mybookstore-RedisRole"
@@ -687,8 +688,8 @@ resource "aws_lambda_function" "BucketCleanup" {
     "x86_64"
   ]
 
-  source_code_hash = "lambda-function-code-repo/DeleteBuckets.zip"
-  filename         = "lambda-function-code-repo/DeleteBuckets.zip"
+  # source_code_hash = "lambda-function-code-repo/DeleteBuckets.zip"
+  filename = "lambda-function-code-repo/DeleteBuckets.zip"
 
   memory_size = 256
   role        = "arn:aws:iam::${var.account_id}:role/mybookstore-BucketCleanupRole"
@@ -724,8 +725,8 @@ resource "aws_lambda_function" "bookstoreNeptuneIAMAttachLambda" {
     "x86_64"
   ]
 
-  source_code_hash = "lambda-function-code-repo/NeptuneIAM.zip"
-  filename         = "lambda-function-code-repo/NeptuneIAM.zip"
+  # source_code_hash = "lambda-function-code-repo/NeptuneIAM.zip"
+  filename = "lambda-function-code-repo/NeptuneIAM.zip"
 
   memory_size = 128
   role        = "arn:aws:iam::${var.account_id}:role/mybookstore-bookstoreNeptuneIAMAttachLambdaRole"
@@ -761,8 +762,8 @@ resource "aws_lambda_function" "bookstoreNeptuneLoaderLambda" {
     "x86_64"
   ]
 
-  source_code_hash = "lambda-function-code-repo/NeptuneLoader.zip"
-  filename         = "lambda-function-code-repo/NeptuneLoader.zip"
+  # source_code_hash = "lambda-function-code-repo/NeptuneLoader.zip"
+  filename = "lambda-function-code-repo/NeptuneLoader.zip"
 
   memory_size = 128
   role        = "arn:aws:iam::${var.account_id}:role/mybookstore-bookstoreNeptuneLoaderLambdaRole"
@@ -804,8 +805,8 @@ resource "aws_lambda_function" "UpdateBestSellers" {
     "x86_64"
   ]
 
-  source_code_hash = "lambda-function-code-repo/UpdateBestSellers.zip"
-  filename         = "lambda-function-code-repo/UpdateBestSellers.zip"
+  # source_code_hash = "lambda-function-code-repo/UpdateBestSellers.zip"
+  filename = "lambda-function-code-repo/UpdateBestSellers.zip"
 
   memory_size = 128
   role        = "arn:aws:iam::${var.account_id}:role/mybookstore-RedisRole"
@@ -854,7 +855,7 @@ resource "aws_lambda_event_source_mapping" "DataTableStream2" {
 #   timeout     = 900
 
 
-#   source_code_hash = "lambda-function-code-repo/aws-serverless-codecommit-seeder.zip"
+#   # source_code_hash = "lambda-function-code-repo/aws-serverless-codecommit-seeder.zip"
 #   filename         = "lambda-function-code-repo/aws-serverless-codecommit-seeder.zip"
 # }
 
@@ -884,8 +885,8 @@ resource "aws_lambda_function" "UpdateConfigFunction" {
   runtime = "nodejs16.x"
   timeout = 300
 
-  source_code_hash = "lambda-function-code-repo/UpdateConfig.zip"
-  filename         = "lambda-function-code-repo/UpdateConfig.zip"
+  # source_code_hash = "lambda-function-code-repo/UpdateConfig.zip"
+  filename = "lambda-function-code-repo/UpdateConfig.zip"
   #"https://${aws_api_gateway_rest_api.AppApi.id}.execute-api.${var.aws_region}.amazonaws.com/prod"
   environment {
     variables = {
@@ -913,8 +914,8 @@ resource "aws_lambda_function" "CreateOSRoleFunction" {
   runtime       = "nodejs16.x"
   timeout       = 300
 
-  source_code_hash = "lambda-function-code-repo/CreateOSRole.zip"
-  filename         = "lambda-function-code-repo/CreateOSRole.zip"
+  # source_code_hash = "lambda-function-code-repo/CreateOSRole.zip"
+  filename = "lambda-function-code-repo/CreateOSRole.zip"
 
 }
 

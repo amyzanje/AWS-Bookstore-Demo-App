@@ -30,6 +30,13 @@ resource "aws_cognito_identity_pool_roles_attachment" "CognitoIdentityPoolRoleAt
 # Create cognito user pool:
 
 resource "aws_cognito_user_pool" "CognitoUserPool" {
+  lifecycle {
+    ignore_changes = [
+      schema,          # Ignore any changes to the schema block
+      password_policy, # Ignore any changes to the password_policy block
+      lambda_config,
+    ]
+  }
   name = "bookstore"
   account_recovery_setting {
     recovery_mechanism {

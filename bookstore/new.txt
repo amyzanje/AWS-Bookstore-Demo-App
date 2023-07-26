@@ -1,0 +1,37 @@
+
+
+
+
+  # aws_s3_bucket_website_configuration.asset_bucket_Website_host will be created
+  + resource "aws_s3_bucket_website_configuration" "asset_bucket_Website_host" {
+      + bucket           = "mybookstore-assetsbucket-ptrp4fcz0svs1996"
+      + id               = (known after apply)
+      + routing_rules    = (known after apply)
+      + website_domain   = (known after apply)
+      + website_endpoint = (known after apply)
+
+      + index_document {
+          + suffix = "index.html"
+        }
+    }
+
+Plan: 1 to add, 44 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: ╷
+│ Error: error asking for approval: EOF
+│
+│
+╵
+
+Interrupt received.
+Please wait for Terraform to exit or data loss may occur.
+Gracefully shutting down...
+
+
+
+Sujit.Zanje@DESKTOP-C4Q20P9 MINGW32 ~/OneDrive/Desktop/demo/demo/bookstore (main)
+$
