@@ -710,7 +710,14 @@ resource "aws_lambda_function" "BucketCleanup" {
 ################################# bookstoreNeptuneIAMAttachLambda ##############################
 
 resource "aws_lambda_function" "bookstoreNeptuneIAMAttachLambda" {
-  description   = "Lambda function to add an IAM policy to a Neptune cluster to allow for bulk load."
+  description = "Lambda function to add an IAM policy to a Neptune cluster to allow for bulk load."
+  environment {
+    variables = {
+      neptunedb = aws_neptune_cluster.NeptuneDBCluster.endpoint
+      iamrole   = aws_iam_role.mybookstore-bookstoreNeptuneLoaderS3ReadRole.arn
+      region    = var.region
+    }
+  }
   function_name = "mybookstore-bookstoreNeptuneIAMAttachLambda"
   handler       = "lambda_function.lambda_handler"
   architectures = [
