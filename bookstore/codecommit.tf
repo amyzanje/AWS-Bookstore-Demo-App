@@ -3,9 +3,5 @@ resource "aws_codecommit_repository" "CodeCommitRepository" {
   repository_name = var.mybookstore-WebAssets
 }
 
-variable "mybookstore-WebAssets" {
-  type    = string
-  default = "mybookstore-WebAssets"
 
-}
 

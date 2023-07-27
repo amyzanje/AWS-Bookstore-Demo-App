@@ -1,6 +1,12 @@
 resource "aws_s3_bucket" "S3Bucket" {
   bucket        = var.AssetsBucket
   force_destroy = true
+
+  lifecycle {
+    ignore_changes = [
+      website,
+    ]
+  }
 }
 
 resource "aws_s3_bucket" "S3Bucket2" {

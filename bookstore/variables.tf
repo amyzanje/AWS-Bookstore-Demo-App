@@ -26,10 +26,16 @@ variable "ProjectName" {
 
 variable "account_id" {
   type    = number
-  default = 564572526252
+  default = data.aws_caller_identity.current.account_id
 }
 
 variable "region" {
   type    = string
   default = "us-east-1"
+}
+
+variable "mybookstore-WebAssets" {
+  type    = string
+  default = "mybookstore-WebAssets"
+
 }

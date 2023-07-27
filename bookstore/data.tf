@@ -23,3 +23,7 @@ output "origin_access" {
 }
 
 
+data "aws_caller_identity" "current" {
+  # No need to specify any arguments
+}
+
