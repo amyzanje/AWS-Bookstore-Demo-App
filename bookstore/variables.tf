@@ -26,7 +26,7 @@ variable "ProjectName" {
 
 variable "account_id" {
   type    = number
-  default = data.aws_caller_identity.current.account_id
+  default = "564572526252"
 }
 
 variable "region" {

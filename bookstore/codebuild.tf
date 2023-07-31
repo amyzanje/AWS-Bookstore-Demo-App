@@ -1,3 +1,5 @@
+# CodeBuild Project
+
 resource "aws_codebuild_project" "CodeBuildProject" {
   depends_on = [aws_s3_bucket.S3Bucket2]
 
@@ -53,6 +55,4 @@ EOF
   build_timeout = 5
 }
 
-# data "aws_cloudformation_stack" "CodeBuildProjectMetadata" {
-#   name = aws_codebuild_project.CodeBuildProject.name
-# }
+

@@ -1,19 +1,4 @@
-/*
 
-resource "aws_neptune_cluster" "bookstoreNeptuneCluster" {
-  iam_database_authentication_enabled = false
-  db_subnet_group_name                = aws_neptune_subnet_group.bookstoreNeptuneSubnetGroup.id
-  vpc_security_group_ids              = [aws_security_group.bookstoreNeptuneSecurityGroup.id]
-}
-
-resource "aws_neptune_instance" "bookstoreNeptuneDB" {
-  db_cluster_identifier = aws_neptune_cluster.bookstoreNeptuneCluster.id
-  db_instance_class     = "db.r6g.large"
-}
-
-
-
-*/
 
 # subnet group for neptune database:
 
@@ -47,7 +32,7 @@ resource "aws_neptune_cluster" "NeptuneDBCluster" {
   iam_roles = [
     aws_iam_role.mybookstore-bookstoreNeptuneLoaderS3ReadRole.arn
   ]
-  #final_snapshot_identifier = "my-final-snapshot"
+
   neptune_subnet_group_name    = aws_neptune_subnet_group.NeptuneDBSubnetGroup.name
   port                         = 8182
   preferred_backup_window      = "16:35-17:05"

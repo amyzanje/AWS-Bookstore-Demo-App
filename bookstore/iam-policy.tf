@@ -1,3 +1,5 @@
+# IAM Policies
+
 resource "aws_iam_role_policy" "IAMPolicy" {
   policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":[\"ec2:CreateNetworkInterface\",\"ec2:DescribeNetworkInterfaces\",\"ec2:DeleteNetworkInterface\",\"ec2:DetachNetworkInterface\"],\"Resource\":\"*\",\"Effect\":\"Allow\"}]}"
   role   = aws_iam_role.mybookstore-bookstoreNeptuneIAMAttachLambdaRole.name

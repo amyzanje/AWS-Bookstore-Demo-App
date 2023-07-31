@@ -2,15 +2,10 @@ data "aws_availability_zones" "available" {
   state = "available"
 }
 
-
 data "aws_elasticsearch_domain" "my_domain" {
   depends_on  = [aws_elasticsearch_domain.OpenSearchServiceDomain]
   domain_name = var.mybookstore-domain
 }
-
-
-
-
 
 
 variable "origin_access_identity" {
@@ -23,7 +18,5 @@ output "origin_access" {
 }
 
 
-data "aws_caller_identity" "current" {
-  # No need to specify any arguments
-}
+
 

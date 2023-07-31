@@ -1,8 +1,3 @@
-#
-# data "aws_cognito_identity_provider" "CognitoIdentityProvider" {
-#   user_pool_id = aws_cognito_user_pool.CognitoUserPool.id
-#   provider_name = "cognito-idp.${var.region}.amazonaws.com/${aws_cognito_user_pool.CognitoUserPool.id}"
-# }
 
 # Create cognito identity pool :
 
@@ -65,105 +60,7 @@ resource "aws_cognito_user_pool" "CognitoUserPool" {
     }
     required = true
   }
-  # schema {
-  #     attribute_data_type = "String"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "name"
-  #     string_attribute_constraints {
-  #         #max_length = "20"
-  #         #min_length = "0"
-  #     }
-  #     required = false
-  # }
-  # schema {
-  #     attribute_data_type = "String"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "given_name"
-  #     string_attribute_constraints {
-  #         #max_length = "20"
-  #         #min_length = "0"
-  #     }
-  #     required = false
-  # }
-  # schema {
-  #     attribute_data_type = "String"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "family_name"
-  #     string_attribute_constraints {
-  #         #max_length = "20"
-  #         #min_length = "0"
-  #     }
-  #     required = false
-  # }
-  # schema {
-  #     attribute_data_type = "String"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "middle_name"
-  #     string_attribute_constraints {
-  #         #max_length = "20"
-  #         #min_length = "0"
-  #     }
-  #     required = false
-  # }
-  # schema {
-  #     attribute_data_type = "String"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "nickname"
-  #     string_attribute_constraints {
-  #         #max_length = "20"
-  #         #min_length = "0"
-  #     }
-  #     required = false
-  # }
-  # schema {
-  #     attribute_data_type = "String"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "preferred_username"
-  #     string_attribute_constraints {
-  #         #max_length = "20"
-  #         #min_length = "0"
-  #     }
-  #     required = false
-  # }
-  # schema {
-  #     attribute_data_type = "String"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "profile"
-  #     string_attribute_constraints {
-  #         #max_length = "20"
-  #         #min_length = "0"
-  #     }
-  #     required = false
-  # }
-  # schema {
-  #     attribute_data_type = "String"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "picture"
-  #     string_attribute_constraints {
-  #         #max_length = "20"
-  #         #min_length = "0"
-  #     }
-  #     required = false
-  # }
-  # schema {
-  #     attribute_data_type = "String"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "website"
-  #     string_attribute_constraints {
-  #         #max_length = "20"
-  #         #min_length = "0"
-  #     }
-  #     required = false
-  # }
+
   schema {
     attribute_data_type      = "String"
     developer_only_attribute = false
@@ -175,96 +72,7 @@ resource "aws_cognito_user_pool" "CognitoUserPool" {
     }
     required = true
   }
-  # schema {
-  #     attribute_data_type = "Boolean"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "email_verified"
-  #     required = false
-  # }
-  # schema {
-  #     attribute_data_type = "String"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "gender"
-  #     string_attribute_constraints {
-  #         #max_length = "20"
-  #         #min_length = "0"
-  #     }
-  #     required = false
-  # }
-  # schema {
-  #     attribute_data_type = "String"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "birthdate"
-  #     string_attribute_constraints {
-  #         #max_length = "10"
-  #         #min_length = "10"
-  #     }
-  #     required = false
-  # }
-  # schema {
-  #     attribute_data_type = "String"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "zoneinfo"
-  #     string_attribute_constraints {
-  #         #max_length = "20"
-  #         #min_length = "0"
-  #     }
-  #     required = false
-  # }
-  # schema {
-  #     attribute_data_type = "String"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "locale"
-  #     string_attribute_constraints {
-  #         #max_length = "20"
-  #         #min_length = "0"
-  #     }
-  #     required = false
-  # }
-  # schema {
-  #     attribute_data_type = "String"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "phone_number"
-  #     string_attribute_constraints {
-  #         #max_length = "20"
-  #         #min_length = "0"
-  #     }
-  #     required = false
-  # }
-  # schema {
-  #     attribute_data_type = "Boolean"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "phone_number_verified"
-  #     required = false
-  # }
-  # schema {
-  #     attribute_data_type = "String"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "address"
-  #     string_attribute_constraints {
-  #         #max_length = "20"
-  #         #min_length = "0"
-  #     }
-  #     required = false
-  # }
-  # schema {
-  #     attribute_data_type = "Number"
-  #     developer_only_attribute = false
-  #     mutable = true
-  #     name = "updated_at"
-  #     number_attribute_constraints {
-  #         min_value = "0"
-  #     }
-  #     required = false
-  # }
+
   auto_verified_attributes = [
     "email"
   ]
@@ -284,7 +92,7 @@ resource "aws_cognito_user_pool" "CognitoUserPool" {
       email_subject = "Your temporary password"
       sms_message   = "Your username is {username} and temporary password is {####}."
     }
-    #unused_account_validity_days = 7-----> deprecated argument
+
   }
   tags = {}
 

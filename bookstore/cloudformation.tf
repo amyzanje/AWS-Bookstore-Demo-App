@@ -102,24 +102,4 @@ resource "aws_cloudformation_stack" "bookstoreNeptuneLoader" {
 }
 
 
-# resource "aws_cloudformation_stack" "bookstoreNeptuneIAMattach" {
-#   name = "bookstoreNeptuneIAMattach"
 
-#   template_body = jsonencode({
-#     "Resources" : {
-#       "bookstoreNeptuneIAMattach" : {
-#         "Type" : "Custom::CustomResource",
-#         "Properties" : {
-#           "ServiceToken" : "${aws_lambda_function.bookstoreNeptuneIAMAttachLambda.arn}"
-#           "ParameterOne" : "CUSTOM RESOURCE TO INITIATE NEPTUNE BULK LOAD PROCESS"
-#         }
-#       }
-#     }
-#   })
-
-#   depends_on = [
-#     aws_neptune_cluster.NeptuneDBCluster,
-#     aws_iam_role.mybookstore-bookstoreNeptuneLoaderS3ReadRole,
-#     aws_lambda_function.bookstoreNeptuneIAMAttachLambda
-#   ]
-# }

@@ -1,3 +1,5 @@
+# DynamoDB Tables
+
 resource "aws_dynamodb_table" "DynamoDBTable" {
   attribute {
     name = "category"

@@ -38,9 +38,9 @@ resource "aws_lambda_function" "UpdateSearchCluster" {
     aws_dynamodb_table.DynamoDBTable
   ]
 
-  # source_code_hash = "lambda-function-code-repo/UpdateSearchCluster.zip"
+
   filename = "lambda-function-code-repo/UpdateSearchCluster.zip"
-  #source_code_size = filemd5("UpdateSearchCluster.zip") * 1024
+
 
   tags = {
     Name = "mybookstore-UpdateSearchCluster"
@@ -73,7 +73,7 @@ resource "aws_lambda_function" "FunctionListOrders" {
     "x86_64"
   ]
 
-  # source_code_hash = "lambda-function-code-repo/ListOrders.zip"
+
   filename = "lambda-function-code-repo/ListOrders.zip"
 
   memory_size = 256
@@ -117,7 +117,7 @@ resource "aws_lambda_function" "FunctionGetBook" {
   memory_size = 256
   role        = "arn:aws:iam::${var.account_id}:role/mybookstore-DynamoDbLambda"
 
-  # source_code_hash = "lambda-function-code-repo/GetBook.zip"
+
   filename = "lambda-function-code-repo/GetBook.zip"
 
   runtime = "nodejs16.x"
@@ -156,7 +156,7 @@ resource "aws_lambda_function" "FunctionListBooks" {
     "x86_64"
   ]
 
-  # source_code_hash = "lambda-function-code-repo/ListBooks.zip"
+
   filename = "lambda-function-code-repo/ListBooks.zip"
 
   memory_size = 256
@@ -197,7 +197,7 @@ resource "aws_lambda_function" "FunctionUpdateCart" {
     "x86_64"
   ]
 
-  # source_code_hash = "lambda-function-code-repo/UpdateCart.zip"
+
   filename = "lambda-function-code-repo/UpdateCart.zip"
 
   memory_size = 256
@@ -239,7 +239,7 @@ resource "aws_lambda_function" "FunctionGetCartItem" {
     "x86_64"
   ]
 
-  # source_code_hash = "lambda-function-code-repo/GetCartItem.zip"
+
   filename = "lambda-function-code-repo/GetCartItem.zip"
 
   memory_size = 256
@@ -279,7 +279,7 @@ resource "aws_lambda_function" "FunctionListItemsInCart" {
     "x86_64"
   ]
 
-  # source_code_hash = "lambda-function-code-repo/ListItemsInCart.zip"
+
   filename = "lambda-function-code-repo/ListItemsInCart.zip"
 
 
@@ -320,7 +320,7 @@ resource "aws_lambda_function" "FunctionAddToCart" {
     "x86_64"
   ]
 
-  # source_code_hash = "lambda-function-code-repo/AddToCart.zip"
+
   filename = "lambda-function-code-repo/AddToCart.zip"
 
 
@@ -362,7 +362,7 @@ resource "aws_lambda_function" "FunctionRemoveFromCart" {
     "x86_64"
   ]
 
-  # source_code_hash = "lambda-function-code-repo/RemoveFromCart.zip"
+
   filename    = "lambda-function-code-repo/RemoveFromCart.zip"
   memory_size = 256
   role        = "arn:aws:iam::${var.account_id}:role/mybookstore-DynamoDbLambda"
@@ -402,7 +402,7 @@ resource "aws_lambda_function" "FunctionCheckout" {
     "x86_64"
   ]
 
-  # source_code_hash = "lambda-function-code-repo/Checkout.zip"
+
   filename = "lambda-function-code-repo/Checkout.zip"
 
   memory_size = 256
@@ -443,7 +443,7 @@ resource "aws_lambda_function" "FunctionUploadBooks" {
     "x86_64"
   ]
 
-  # source_code_hash = "lambda-function-code-repo/UploadBooks.zip"
+
   filename = "lambda-function-code-repo/UploadBooks.zip"
 
 
@@ -475,7 +475,7 @@ resource "aws_lambda_function" "FunctionGetRecommendations" {
     "x86_64"
   ]
 
-  # source_code_hash = "lambda-function-code-repo/GetRecommendations.zip"
+
   filename = "lambda-function-code-repo/GetRecommendations.zip"
 
 
@@ -525,7 +525,7 @@ resource "aws_lambda_function" "FunctionGetRecommendationsByBook" {
     "x86_64"
   ]
 
-  # source_code_hash = "lambda-function-code-repo/GetRecommendationsByBook.zip"
+
   filename = "lambda-function-code-repo/GetRecommendationsByBook.zip"
 
 
@@ -577,7 +577,7 @@ resource "aws_lambda_function" "FunctionSearch" {
     "x86_64"
   ]
 
-  # source_code_hash = "lambda-function-code-repo/Search.zip"
+
   filename = "lambda-function-code-repo/Search.zip"
 
   memory_size = 256
@@ -617,7 +617,7 @@ resource "aws_lambda_permission" "LambdaPermission_Search" {
 resource "aws_lambda_layer_version" "PythonLambdaLayer" {
   compatible_runtimes = ["python3.9", "python3.7", "python3.6"]
   layer_name          = "PythonLambdaLayer"
-  # source_code_hash    = "lambda-function-code-repo/PythonLambdaLayer.zip"
+
   filename = "lambda-function-code-repo/PythonLambdaLayer.zip"
 
 }
@@ -630,7 +630,7 @@ resource "aws_lambda_function" "FunctionGetBestSellers" {
   description = "Get the top 20 best selling books from ElastiCache"
   environment {
     variables = {
-      # URL = "mybookstore-cluster.o9uwnq.0001.use1.cache.amazonaws.com"
+
       URL = aws_elasticache_cluster.ElastiCacheCacheCluster.cache_nodes.0.address
     }
   }
@@ -640,7 +640,7 @@ resource "aws_lambda_function" "FunctionGetBestSellers" {
     "x86_64"
   ]
 
-  # source_code_hash = "lambda-function-code-repo/GetBestSellers.zip"
+
   filename = "lambda-function-code-repo/GetBestSellers.zip"
 
   memory_size = 256
@@ -688,7 +688,7 @@ resource "aws_lambda_function" "BucketCleanup" {
     "x86_64"
   ]
 
-  # source_code_hash = "lambda-function-code-repo/DeleteBuckets.zip"
+
   filename = "lambda-function-code-repo/DeleteBuckets.zip"
 
   memory_size = 256
@@ -725,7 +725,7 @@ resource "aws_lambda_function" "bookstoreNeptuneIAMAttachLambda" {
     "x86_64"
   ]
 
-  # source_code_hash = "lambda-function-code-repo/NeptuneIAM.zip"
+
   filename = "lambda-function-code-repo/NeptuneIAM.zip"
 
   memory_size = 128
@@ -762,7 +762,7 @@ resource "aws_lambda_function" "bookstoreNeptuneLoaderLambda" {
     "x86_64"
   ]
 
-  # source_code_hash = "lambda-function-code-repo/NeptuneLoader.zip"
+
   filename = "lambda-function-code-repo/NeptuneLoader.zip"
 
   memory_size = 128
@@ -805,7 +805,7 @@ resource "aws_lambda_function" "UpdateBestSellers" {
     "x86_64"
   ]
 
-  # source_code_hash = "lambda-function-code-repo/UpdateBestSellers.zip"
+
   filename = "lambda-function-code-repo/UpdateBestSellers.zip"
 
   memory_size = 128
@@ -842,24 +842,6 @@ resource "aws_lambda_event_source_mapping" "DataTableStream2" {
 
 
 
-########################## SeederFunction #######################
-
-# resource "aws_lambda_function" "SeederFunction" {
-#   function_name = "SeederFunction"
-#   depends_on  = [aws_codecommit_repository.CodeCommitRepository]
-#   description = "CodeCommit repository seeder"
-#   handler     = "seeder.SeedRepositoryHandler"
-#   memory_size = 3008
-#   role        = aws_iam_role.mybookstore-SeederRole.arn
-#   runtime     = "java8"
-#   timeout     = 900
-
-
-#   # source_code_hash = "lambda-function-code-repo/aws-serverless-codecommit-seeder.zip"
-#   filename         = "lambda-function-code-repo/aws-serverless-codecommit-seeder.zip"
-# }
-
-
 
 
 ############################### UpdateConfigFunction ##################################
@@ -870,8 +852,6 @@ resource "aws_lambda_function" "UpdateConfigFunction" {
 
   depends_on = [
     aws_codecommit_repository.CodeCommitRepository,
-    #aws_lambda_function.SeederFunction,
-    #aws_cloudformation_custom_resource.RepositorySeeder,
     aws_api_gateway_rest_api.AppApi,
     aws_cognito_user_pool.CognitoUserPool,
     aws_cognito_user_pool_client.CognitoUserPoolClient,
@@ -885,9 +865,9 @@ resource "aws_lambda_function" "UpdateConfigFunction" {
   runtime = "nodejs16.x"
   timeout = 300
 
-  # source_code_hash = "lambda-function-code-repo/UpdateConfig.zip"
+
   filename = "lambda-function-code-repo/UpdateConfig.zip"
-  #"https://${aws_api_gateway_rest_api.AppApi.id}.execute-api.${var.aws_region}.amazonaws.com/prod"
+
   environment {
     variables = {
       API_URL          = "https://${aws_api_gateway_rest_api.AppApi.id}.execute-api.${var.region}.amazonaws.com/prod"
@@ -914,21 +894,7 @@ resource "aws_lambda_function" "CreateOSRoleFunction" {
   runtime       = "nodejs16.x"
   timeout       = 300
 
-  # source_code_hash = "lambda-function-code-repo/CreateOSRole.zip"
+
   filename = "lambda-function-code-repo/CreateOSRole.zip"
 
 }
-
-
-# resource "aws_cloudformation_custom_resource" "RepositorySeeder" {
-#   service_token             = aws_lambda_function.SeederFunction.arn
-#   create_before_destroy     = true
-
-#   properties = {
-#     sourceUrl               = "lambda-function-code-repo/bookstore-webapp.zip"
-#     targetRepositoryName    = aws_codecommit_repository.CodeCommitRepository.repository_name
-#     targetRepositoryRegion  = var.region
-#   }
-# }
-
-# Define other necessary resources and configurations

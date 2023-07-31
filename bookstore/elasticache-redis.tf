@@ -10,9 +10,8 @@ resource "aws_elasticache_subnet_group" "ElastiCacheSubnetGroup" {
 # creation of elasticache cluster:
 
 resource "aws_elasticache_cluster" "ElastiCacheCacheCluster" {
-  node_type = "cache.t2.micro"
-  engine    = "redis"
-  #engine_version_actual = "7.0.7"
+  node_type            = "cache.t2.micro"
+  engine               = "redis"
   num_cache_nodes      = 1
   availability_zone    = "us-east-1a"
   maintenance_window   = "tue:06:30-tue:07:30"

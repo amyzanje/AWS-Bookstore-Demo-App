@@ -1,3 +1,10 @@
+# Null Resouces are used to push the code to newly creted CodeCommit Repo
+
+
+
+
+
+#1. Cloing Repo to locally
 resource "null_resource" "Clone_Repo" {
   provisioner "local-exec" {
 
@@ -15,6 +22,8 @@ resource "null_resource" "Clone_Repo" {
   ]
 }
 
+#2. Add code files into local repo
+
 resource "null_resource" "Copy_data_to_local_repo" {
   provisioner "local-exec" {
     command = <<-EOT
@@ -24,6 +33,8 @@ resource "null_resource" "Copy_data_to_local_repo" {
   }
   depends_on = [null_resource.Clone_Repo]
 }
+
+#3. Git add
 
 resource "null_resource" "git_Add" {
   provisioner "local-exec" {
@@ -35,6 +46,7 @@ resource "null_resource" "git_Add" {
   depends_on = [null_resource.Copy_data_to_local_repo]
 }
 
+#4. Git Commit
 
 resource "null_resource" "git_commit" {
   provisioner "local-exec" {
@@ -45,6 +57,8 @@ resource "null_resource" "git_commit" {
   }
   depends_on = [null_resource.git_Add]
 }
+
+#5. Git Push
 
 resource "null_resource" "git_push" {
   provisioner "local-exec" {
